@@ -1,0 +1,238 @@
+.topArea {
+    width: 100%;
+    background-color: #5DA2B6;
+    text-align: center;
+    margin-top: -20px;
+    display: inline-block;
+}
+.topHead {
+    font-family: 'Nanum Gothic', sans-serif;
+    text-align: center;
+    background-color: #5DA2B6;
+    font-size: 45px;
+    height: 30%;
+    margin-bottom: -3px;
+    
+}
+.settings{
+    background-color: #5DA2B6;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+.settingsDropdown{
+    background-color: #5DA2B6;
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    bottom: 10px;
+}
+body {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right:0px;
+    margin-bottom: 0px;
+}
+.settingsIcon {
+    display: inline-block;
+    position: relative;
+    right: 500px;
+    width: 30px;
+    bottom: -10px;
+    
+
+}
+#date {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+}
+.rel-links{
+    font-family: 'Oswald', sans-serif;
+    position: relative; 
+    float: right;
+    text-decoration: none;
+    font-size: 30px;
+}
+.dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #727272;
+    min-width: 60px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    text-align: left;
+    margin-left: -500px;
+}
+.settingsDropdown:hover .dropdownContent {
+    display: block;
+}
+.gameDifficulty {
+    cursor: pointer;
+}
+
+.buyPanel {
+    float: right;
+    background-color: black;
+    width: 33.3333333333333333%;
+    height: 900px;
+}
+
+.bitcoinGraphic {
+    float: left;
+    background-image: url("Images/backgrounds/download.jpg");
+    width: 33.33333333333333333%;
+    height: 900px;
+}
+.buyBoxUnlocked {
+
+    background-color:#909090; 
+    margin-top: 5px;
+    margin-left: 10px;
+    border-radius: 17px;
+    width: 96%;
+    height: 60px;
+}
+.buyBoxLocked {
+    background-color: #303030; 
+    margin-top: 5px;
+    margin-left: 10px;
+    border-radius: 17px;
+    box-shadow:  -2px -2px 5px #303030;
+    width: 96%;
+    height: 60px;
+    min-height: 60px;
+    border: #303030;
+}
+.buyItemHeadingUnlocked {
+    font-family: 'Nanum Gothic', sans-serif;
+    color: white;
+    text-align: left;
+    margin-left: 17px;
+    margin-top: 7px;
+    font-weight: bold;
+}
+.buyItemHeadingLocked {
+    font-family: 'Nanum Gothic', sans-serif;
+    color: #303030;
+    text-align: left;
+    margin-left: 17px;
+    margin-top: 7px;
+    font-weight: bold;
+
+}
+.unlockedImage {
+    height: 40px;
+    margin-left: 420px;
+    position: relative;
+    bottom: 25px;
+}
+.lockedImage {
+    height: 40px;
+    margin-left: 420px;
+    position: relative;
+    bottom: 25px;
+    filter: brightness(5%);
+}
+.unlockedMain {
+    font-family: "Nanum Gothic", sans-serif;
+    color: white;
+    position: relative;
+    bottom: 60px;
+    margin-left: 17px;
+}
+.lockedMain {
+    font-family: "Nanum Gothic", sans-serif;
+    color:#565656;
+    position: relative;
+    bottom: 60px;
+    margin-left: 17px;
+    color: rgba(0, 0, 0, 0.0);
+}
+#BigBit {
+    width: 500px;
+    position: relative;
+    top: 100px;
+}
+#BitcoinAmount {
+    color: white;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+#ShowCPS {
+    color: white;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+#IPodCost {
+    font-family: "Nanum Gothic", sans-serif;
+    color: white;
+}
+#tabletCost {
+    font-family: "Nanum Gothic", sans-serif;
+    color: white;
+}
+.stuffBox {
+    min-height: 60px;
+    background-color: #303030;
+    width: 33.333333333333333%; 
+    border-top-color: #565656;
+    border-bottom-color: #565656;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    position: block;
+    overflow: auto;
+    
+}
+
+.NGP {
+    height: 59.999px;
+}
+#tabletImg {
+    margin-right: 20px;
+}
+.upgradeImgUnlocked {
+    width: 30px;
+    display: inline-block;
+}
+.upgradeDiv {
+    width: 100px;
+    display: inline-block;
+    position: relative;
+    top: 10px;
+    right: 150px;
+}
+.UpgDrop{
+        
+    display: inline-block;
+    position: relative;
+    width: 30px;
+}
+.UpgDrop:hover .UpgDropdownContent {
+    display: block;
+}
+.UpgDropdownContent {
+    position: relative;
+    left: 500px;
+    width: 120px;
+}
+.upgradeImgLocked {
+    filter:brightness(5%);
+    width: 30px;
+    display: inline-block;
+}
+.UpgDropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #727272;
+    min-width: 60px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    text-align: left;
+    margin-left: -500px;
+}

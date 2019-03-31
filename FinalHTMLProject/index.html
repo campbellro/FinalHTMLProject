@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+    <head>
+        <title>Idle Clicker</title>
+        <link rel="icon" href="Images/download.png"/>
+        <link rel="stylesheet" href="Clicker.css" />
+        <link href="https://fonts.googleapis.com/css?family=Germania+One|Nanum+Gothic|Oswald|Passion+One" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="topArea">
+            <h1 Class="topHead">BITCOIN MINER</h1>
+            <div class="settings">
+                
+                <div class="upgradeDiv">
+                    <div ID="UpgDrop1" class="UpgDrop">
+                        <img class="upgradeImgUnlocked" src="Images/icons/10.jpg" ID="Upgrade1" onclick="multiplyTotalClicks(2,10,2)" alt="10">
+                        <div ID="UpgDrop1Content" class="UpgDropdownContent">
+                            <p>For 2 bitcoins you can get an extra 10 Bitcoins</p>
+                        </div>
+                    </div>
+                    <div ID="UpgDrop2" class="UpgDrop">
+                        <img class="upgradeImgUnlocked" src="Images/icons/x2multiplier.jpg" ID="Upgrade2" onclick="multiplyTotalClicks(10, 2, 1)" alt="x2">
+                        <div ID="UpgDrop2Content" class="UpgDropdownContent">
+                            <p>For 10 bitcoins you can double the amount of Bitcoins you own</p>
+                        </div>
+                    </div>
+                    <div ID="UpgDrop3" class="UpgDrop">
+                        <img class="upgradeImgUnlocked" src="Images/icons/godmode.jpg" ID="Upgrade3" onclick="upgradeButton(20,1000,3)" alt="pic of mans face">
+                        <div ID="UpgDrop3Content" class="UpgDropdownContent">
+                            <p>Godmode:</br>For 20 bitcoins you can get 1000 clicks per click of the bitcoin</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p ID="date"></p>
+                
+                <div class="settingsDropdown">
+                   <img src="Images/icons/Windows_Settings_app_icon.png" class="settingsIcon" alt="cog"/>
+                    <div class="dropdownContent">
+                        <p onclick="setEasy()" class="gameDifficulty">Easy</p>
+                        <P onclick="setMed()" class="gameDifficulty" >Medium</P>                            
+                        <p onclick="setHard()" class="gameDifficulty">Hard</p>
+                    </div>
+                </div>   
+            </div>
+        </div>
+        <div class="buyPanel">
+            <div class="buyBoxUnlocked" onclick="setPriceNokia()">
+                <p class="buyItemHeadingUnlocked">NOKIA</p>
+                <img src="Images/icons/nokia.jpg" class="unlockedImage" alt="Pic of Nokia">
+                <p  class="unlockedMain">Nokia: 1 bitcoin every ten seconds Price: <span ID="nokiaCost"></span></p>
+            </div>
+            <div class="buyBoxLocked" ID="IPodDiv" onclick="setPriceIPod()">
+                <p onclick="setPriceIPod()" class="buyItemHeadingLocked" ID="IPodHead">IPod</p>
+                <img onclick="setPriceIPod()" src="Images/icons/ipod.jpg" class="lockedImage" ID="IpodImg" alt="pic of Ipod">
+                <p  onclick="setPriceIPod()" class="lockedMain" ID="IPodMain">Ipod: 1 bitcoin a second <span ID="IPodCost"></span></p>
+            </div> 
+            <div class="buyBoxLocked" ID="tabletDiv" onclick="setPriceTablet()">
+                <p onclick="setPriceTablet()" class="buyItemHeadingLocked" ID="tabletHead">Tablet</p>
+                <img onclick="setPriceTablet()" class="lockedImage" src="Images/icons/tablet.jpg" ID="tabletImg" alt="pic of tablet">
+                <p onclick="setPriceTablet()" class="lockedMain" ID="tabletMain">Ipod: 5 bitcoin a second <span ID="tabletCost"></span></p>
+            </div>
+        </div>
+        <div class="bitcoinGraphic">
+            <h1 ID="BitcoinAmount">Number of Bitcoins <span ID="NOB"></span></h1>
+            <h2 ID="ShowCPS">Coins per second: <span ID="GCPS"></span></h2>
+            <img ID="BigBit" src="Images/icons/BigBit.png" onclick="AC()" alt="giant coin">
+            <p class="rel-links"> relevant Links = <a href="http://orteil.dashnet.org/cookieclicker/">Cookie Clicker </a><a href="https://www.w3schools.com/">w3 schools </a><a href="https://bitcoin.org/en/">Bitcoin website</a></p>
+        </div>
+        <div class="stuffGraphic" ID="HTMLSg">
+            <div class="stuffBox" ID="NokiaBox">
+
+            </div>
+
+        </div>
+    </body>
+    <script>
+            var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var day = new Date();
+            var DOM = new Date();
+            var month = new Date();
+            var year = new Date();
+            var aMonth = month.getMonth() + 1;
+
+            document.getElementById("date").innerHTML = days[day.getDay()] + "  " + DOM.getDate() + ":" + aMonth + ":" + year.getFullYear();
+            var baseMultiplier = 1;
+            var setNokiaPrice = 10;
+            var setIPodPrice = 100;
+            var setTabletPrice = 500;
+            var NoNokia = 0;
+            var NoIPod = 0;
+            var NoTablet = 0;
+            var NoBitcoins = 0;
+            var clickAmount = 1;
+            var NokiaCPS = 0.1;
+            var IPodCPS = 1;
+            var TabletCPS = 5;
+            var CPS = 0;
+            var CV = 1;
+            var NBE = 0;
+            var IBE = 0;
+            var TBE = 0;
+            var IPCC = 0;
+            var TCC = 0;
+            var img = new Image();
+            
+            var SBJsI = document.getElementById("HTMLSg");
+            var NokiaShow = document.getElementById("NokiaBox");
+            document.getElementById("nokiaCost").innerHTML = setNokiaPrice;
+            document.getElementById("IPodCost").innerHTML = "Price: " + setIPodPrice;
+            document.getElementById("tabletCost").innerHTML = "Price: " + setTabletPrice;
+            window.setInterval(function SCNOC() {
+                NoBitcoins = (NoBitcoins + CPS) * baseMultiplier;
+                
+                document.getElementById("NOB").innerHTML = NoBitcoins.toLocaleString(); 
+                
+                document.getElementById("GCPS").innerHTML = CPS.toLocaleString();
+                if (NoBitcoins >= setIPodPrice - setIPodPrice/5) { 
+                    document.getElementById("IPodDiv").className = "buyBoxUnlocked";
+                    document.getElementById("IPodHead").className = "buyItemHeadingUnlocked";
+                    document.getElementById("IpodImg").className = "unlockedImage";
+                    document.getElementById("IPodMain").className = "unlockedMain";
+                    
+                }
+                if (NoBitcoins >= setTabletPrice - setTabletPrice/5) { 
+                    document.getElementById("tabletDiv").className = "buyBoxUnlocked";
+                    document.getElementById("tabletHead").className = "buyItemHeadingUnlocked";
+                    document.getElementById("tabletImg").className = "unlockedImage";
+                    document.getElementById("tabletMain").className = "unlockedMain";
+                    
+                }
+                
+                if (NBE > 0){
+                    NokiaShow.innerHTML += "<img class='NGP'src='Images/icons/nokia.jpg'/>";
+                    NBE = NBE - 1;
+                }
+                if (IBE > 0){
+                     
+                    document.getElementById("IPodBox").innerHTML += "<img class='NGP' src='Images/icons/ipod.jpg'/>";
+                    IBE = IBE - 1;
+                }
+                if (TBE > 1){
+                    document.getElementById("tabletBox").innerHTML += "<img class='NGP' src='Images/icons/tablet.jpg'/>";
+                    TBE = TBE - 1;
+                }
+                
+            } , 1000);
+            function AC(){
+                NoBitcoins = NoBitcoins + CV;
+                document.getElementById("NOB").innerHTML =NoBitcoins.toLocaleString();
+                console.log(NoBitcoins);
+            }
+            
+            function setEasy() {
+                var baseMultiplier = 1.25;
+                console.log("game now on easy");
+            }
+            function setMed() {
+                var baseMultiplier = 1;
+                console.log("game now on medium");
+            }
+            function setHard() {
+                var baseMultiplier = 0.75
+                console.log("game now on hard");
+            }
+            function setPriceNokia() {
+                    if (NoBitcoins >= setNokiaPrice) {
+                    NoBitcoins = NoBitcoins - setNokiaPrice;
+                    setNokiaPrice = setNokiaPrice + setNokiaPrice/10;
+                    setNokiaPrice = Math.round(setNokiaPrice);
+                    NoNokia = NoNokia + 1;
+                    document.getElementById("nokiaCost").innerHTML = setNokiaPrice;
+                    document.getElementById("NOB").innerHTML = Math.round(NoBitcoins);
+                    console.log(setNokiaPrice);
+                    ICPS(NokiaCPS);
+                    NBE = NBE + 1;
+                    
+                }
+            }
+            function setPriceIPod() {
+                    if (NoBitcoins >= setIPodPrice) {
+                    NoBitcoins = NoBitcoins - setIPodPrice;
+                    setIPodPrice = setIPodPrice + setIPodPrice/10;
+                    setIPodPrice = Math.round(setIPodPrice);
+                    NoIPod = NoIPod + 1;
+                    document.getElementById("IPodCost").innerHTML = "Price: " + setIPodPrice;
+                    document.getElementById("NOB").innerHTML = Math.round(NoBitcoins);
+                    console.log(setIPodPrice);
+                    ICPS(IPodCPS);
+                    IBE = IBE + 1;
+                    if (IPCC === 0){
+                        SBJsI.innerHTML += "<div class='stuffBox' ID='IPodBox'> </div>";
+                        IPCC = IPCC + 1;
+                    }
+                }
+            }
+            function setPriceTablet() {
+                    if (NoBitcoins >= setTabletPrice) {
+                    NoBitcoins = NoBitcoins - setTabletPrice;
+                    setTabletPrice = setTabletPrice + setTabletPrice/10;
+                    NoTablet = NoTablet + 1;
+                    document.getElementById("tabletCost").innerHTML = "Price: " + setTabletPrice;
+                    document.getElementById("NOB").innerHTML = NoBitcoins.toLocaleString();
+                    console.log(setTabletPrice);
+                    ICPS(TabletCPS);
+                    TBE = TBE + 1;
+                    if (TCC === 0){
+                        SBJsI.innerHTML += "<div class='stuffBox' ID='tabletBox'> </div>";
+                        TCC = TCC + 1;
+                    }
+                }
+            }
+            function upgradeButton (price, role, upgNum){
+                if(NoBitcoins >= price && document.getElementById("Upgrade" + upgNum).className != "upgradeImgLocked") {
+                   var upgNum = upgNum;
+                   CV = role;
+                   NoBitcoins = NoBitcoins - price;
+                   document.getElementById("NOB").innerHTML = NoBitcoins;
+                   document.getElementById("Upgrade" + upgNum).className = "upgradeImgLocked";
+                }
+            }
+
+            function ICPS(x) {
+                CPS = CPS + x;
+                
+            }
+            function multiplyTotalClicks(c, a, b){
+                NoBitcoins = NoBitcoins - c;
+                if (b == 1){
+                    NoBitcoins = NoBitcoins * a;
+                }
+                else {
+                    NoBitcoins = NoBitcoins + a;
+                }
+                console.log(NoBitcoins);
+                document.getElementById("NOB").innerHTML = NoBitcoins;
+            }
+        </script>
+
+</html>
